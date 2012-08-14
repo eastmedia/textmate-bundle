@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>mtg</string>
+	</array>
+	<key>name</key>
+	<string>Weekly Meetings</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>^\w[\w ]+</string>
+			<key>end</key>
+			<string>:</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^[ \t]+</string>
+			<key>end</key>
+			<string>:</string>
+			<key>name</key>
+			<string>weeklymeeting.names</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[A-Za-z]+</string>
+					<key>name</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>/|:</string>
+					<key>name</key>
+					<string>comment</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.weeklymeeting</string>
+	<key>uuid</key>
+	<string>23F53ACC-FF25-4D26-81C7-E278E9B99D36</string>
+</dict>
+</plist>
