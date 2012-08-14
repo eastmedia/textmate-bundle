@@ -12,32 +12,41 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^\w[\w ]+</string>
+			<string>^[\w() ]+:$</string>
 			<key>end</key>
-			<string>:</string>
+			<string>^\s*$</string>
 			<key>name</key>
 			<string>constant</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>^[ \t]+</string>
-			<key>end</key>
-			<string>:</string>
-			<key>name</key>
-			<string>weeklymeeting.names</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>[A-Za-z]+</string>
+					<key>begin</key>
+					<string>^[ \t]+</string>
+					<key>end</key>
+					<string>:</string>
 					<key>name</key>
-					<string>string</string>
+					<string>text</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>[A-Za-z]+</string>
+							<key>name</key>
+							<string>string</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>/</string>
+							<key>name</key>
+							<string>comment</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>/|:</string>
+					<string>.+?</string>
 					<key>name</key>
-					<string>comment</string>
+					<string>text</string>
 				</dict>
 			</array>
 		</dict>
